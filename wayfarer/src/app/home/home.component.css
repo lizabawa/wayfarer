@@ -1,0 +1,13 @@
+.container {
+    margin-top: 2%;
+}
+
+#city-list{
+    background-color: grey;
+    margin-right: 3%;
+    height: 500px;
+}
+
+#city-info{
+    background-color: darkred;
+}
