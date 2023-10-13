@@ -8,13 +8,15 @@ import { CarouselComponent } from './carousel/carousel.component';
 import { TopicComponent } from './topic/topic.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
+import { CityInfoComponent } from './city-info/city-info.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LandingComponent,
     TopicComponent,
-    HomeComponent
+    HomeComponent,
+    CityInfoComponent
   ],
   imports: [
     BrowserModule,
