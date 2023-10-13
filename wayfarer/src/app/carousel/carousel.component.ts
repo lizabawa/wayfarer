@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 	standalone: true,
 	imports: [NgbCarouselModule, NgFor, FormsModule],
 	templateUrl: './carousel.component.html',
+  styleUrls: ['./carousel.component.css']
 })
 
 export class CarouselComponent {
@@ -17,7 +18,6 @@ export class CarouselComponent {
 	unpauseOnArrow = false;
 	pauseOnIndicator = false;
 	pauseOnHover = true;
-	pauseOnFocus = true;
 
 	@ViewChild('carousel', { static: true })
   carousel!: NgbCarousel;

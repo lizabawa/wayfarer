@@ -1,0 +1,12 @@
+.container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.card {
+    border: none;
+}
+
+h2 {
+    text-align: center;
+}
