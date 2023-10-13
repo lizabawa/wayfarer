@@ -1,3 +1,4 @@
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -11,12 +12,13 @@ import { AppRoutingModule } from './app-routing.module';
   declarations: [
     AppComponent,
     LandingComponent,
-    CarouselComponent,
     TopicComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgbModule,
+    CarouselComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
