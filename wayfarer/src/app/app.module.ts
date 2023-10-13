@@ -9,6 +9,7 @@ import { TopicComponent } from './topic/topic.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
 import { CityInfoComponent } from './city-info/city-info.component';
+import { InfoBubbleComponent } from './info-bubble/info-bubble.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { CityInfoComponent } from './city-info/city-info.component';
     LandingComponent,
     TopicComponent,
     HomeComponent,
-    CityInfoComponent
+    CityInfoComponent,
+    InfoBubbleComponent
   ],
   imports: [
     BrowserModule,
