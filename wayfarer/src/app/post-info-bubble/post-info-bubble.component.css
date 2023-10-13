@@ -1,0 +1,15 @@
+.container {
+    display: flex;
+    border-radius: 5px;
+    border-style: solid;
+    justify-content: space-between;
+    padding: 10px;
+    align-items: center;
+    margin-top: 10px;
+}
+
+img { 
+    height: 50px;
+    width: 50px;
+    overflow: hidden;
+}
