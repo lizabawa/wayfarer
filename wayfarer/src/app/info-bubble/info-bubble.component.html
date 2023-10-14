@@ -1,4 +1,4 @@
-<div class="container">
-    <img src="{{cityImage}}">
-    <h3>{{cityName}}</h3>
+<div *ngFor="let city of cities" class="container">
+    <img src={{city.image}}>
+    <h3>{{city.name}}</h3>
 </div>

@@ -1,20 +1,39 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http'; 
+import { Subject, debounceTime, distinctUntilChanged } from 'rxjs';
+import { AppCitySearchService } from './app-city-search.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'wayfarer';
   citySearch: string = '';
-  constructor(private http: HttpClient) { }
+  searchSubject = new Subject();
+  
+
+
+  constructor(private appCitySearch: AppCitySearchService) { }
   findCity(city: string): void {
-    this.http.get(`http://api.openweathermap.org/geo/1.0/direct?q=${this.citySearch}&appid=052f26926ae9784c2d677ca7bc5dec98&`)
-    .subscribe((response: any) => {
+    this.searchSubject.next(city);
+    
+
+}
+
+ngOnInit(): void {
+  this.searchSubject.pipe(
+    debounceTime(1000),
+    distinctUntilChanged()
+  ).subscribe(city => { 
+    this.appCitySearch.findCityDetails(city as string).subscribe(res => {
+    
+      this.appCitySearch.cityInfo.next(res);
+      this.citySearch = '';
       
-    console.log(response);
-    }) 
-  }
+})
+});
+
+}
 }

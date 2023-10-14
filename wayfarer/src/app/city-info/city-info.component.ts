@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { AppCitySearchService } from '../app-city-search.service';
+import { AppComponent } from '../app.component';
+
 
 @Component({
   selector: 'app-city-info',
@@ -6,5 +9,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./city-info.component.css']
 })
 export class CityInfoComponent {
-
+  
+ 
 }
