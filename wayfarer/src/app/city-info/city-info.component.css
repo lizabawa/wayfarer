@@ -1,3 +1,15 @@
+#weather {
+    border-style: solid;
+    height: 200px;
+}
+
+#row1 {
+    margin-top: 10px;
+}
+
+#row2 {
+    margin-top: 10px;
+}
 
 /* .container {
     position: relative;

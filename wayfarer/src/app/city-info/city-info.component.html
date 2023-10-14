@@ -1,15 +1,19 @@
 <div class="container">
-  <div class="row">
-    <div class="col align-self-start">
+  <div class="row" id="row1">
+    <div class="col-sm-3">
       <h3>City Name</h3>
       <h5>Country Name</h5>
-      <div class="col">
-        <h3>Weather</h3>
-      </div>
     </div>
+    <div class="col" id="weather">
+      <h3>Weather</h3>
+    </div>
+  </div>
+  <div class="row" id="row2">
     <div class="col">
-      <h3>Posts</h3>
-      <app-post-info-bubble></app-post-info-bubble>
+       <h3>Posts</h3>
+       <app-post-info-bubble></app-post-info-bubble>
+       <!--Remove extra postinfobubble tag once we get additional -->
+       <app-post-info-bubble></app-post-info-bubble>
     </div>
   </div>
 </div>
