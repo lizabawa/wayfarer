@@ -1,17 +1,7 @@
-/* .container {
-    display: flex;
-    border-radius: 5px;
-    border-style: solid;
-    justify-content: space-between;
-    padding: 10px;
-    align-items: center;
-    margin-top: 10px;
-} */
-
 .container {
     display: flex;
     width: 100%;  /* take up full width of parent */
-    border-radius: 5px;
+    border-radius: 20px;
     border-style: solid;
     padding: 10px;
     margin-top: 10px;
