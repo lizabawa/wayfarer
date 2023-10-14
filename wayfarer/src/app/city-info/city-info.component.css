@@ -70,7 +70,7 @@
 .weather-img {
   width: 40%;
   height: 40%;
-  margin-right: 10px;
+
 }
 .temperature {
   font-size: 3rem; /* Increased font size */
@@ -93,7 +93,7 @@
 
 .high,
 .low {
-  font-size: 1.1rem; /* Bigger than before */
+  font-size: 1.5rem; /* Bigger than before */
 }
 
 
@@ -148,7 +148,7 @@
   }
 
   .temperature {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
 
   .condition {
@@ -157,7 +157,7 @@
 
   .high,
   .low {
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
 
   .additional-info {
