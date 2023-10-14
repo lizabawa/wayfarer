@@ -3,7 +3,7 @@
     <div class="col align-self-start">
       <h3>{{cityInfo.name }}</h3>
       <h5>{{ cityInfo.country || 'Country Name' }}</h5> <!-- Assuming cityData has a country property -->
-      <!-- <div class="col">
+<!-- <div class="col">
         <h3>Weather</h3>
         <p>{{ cityInfo.description }}</p>
       </div>
@@ -13,37 +13,38 @@
       <app-post-info-bubble></app-post-info-bubble>
     </div>
   </div>
-</div> --> 
+</div> -->
 
 <div class="city-detail">
   <div class="city-header">
-      <div class="city-name">
-          <h2>London</h2>
-          <h4>United Kingdom</h4>
-      </div>
-      <div class="weather">
-        <div class="weather-display">
-          <img src="http://openweathermap.org/img/w/03d.png" alt="Weather Icon" class="weather-icon">
-          <div class="weather-info">
-              <span class="temperature">20°F</span>
-              <div class="temperature-range">
-                  <span class="high">H: 25°F</span> | <span class="low">L: 15°F</span>
-              </div>
-              <span class="condition">Clear Sky</span>
-              <div class="additional-info">
-                  <span class="sunrise">Sunrise: 6:30 AM</span>
-                  <span class="sunset">Sunset: 8:15 PM</span>
-                  <span class="wind">Wind: 10 mph</span>
-                  <span class="humidity">Humidity: 65%</span>
-              </div>
+    <div class="city-name">
+      <h2>London</h2>
+      <h4>United Kingdom</h4>
+    </div>
+    <div class="weather">
+      <div class="weather-display">
+        <img
+          src="http://openweathermap.org/img/w/03d.png"
+          alt="Weather Icon"
+          class="weather-icon"
+        />
+        <div class="weather-info">
+          <span class="temperature">20°F</span>
+          <div class="temperature-range">
+            <span class="high">H: 25°F</span> | <span class="low">L: 15°F</span>
           </div>
+          <span class="condition">Clear Sky</span>
+          <div class="additional-info">
+            <span class="sunrise">Sunrise: 6:30 AM</span>
+            <span class="sunset">Sunset: 8:15 PM</span>
+            <span class="wind">Wind: 10 mph</span>
+            <span class="humidity">Humidity: 65%</span>
+          </div>
+        </div>
       </div>
-      
-        
-      </div>
+    </div>
   </div>
   <div class="posts">
-      <app-post-info-bubble></app-post-info-bubble> 
+    <app-post-info-bubble></app-post-info-bubble>
   </div>
 </div>
-
