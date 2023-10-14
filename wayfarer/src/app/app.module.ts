@@ -11,6 +11,7 @@ import { HomeComponent } from './home/home.component';
 import { CityInfoComponent } from './city-info/city-info.component';
 import { InfoBubbleComponent } from './info-bubble/info-bubble.component';
 import { PostInfoBubbleComponent } from './post-info-bubble/post-info-bubble.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { PostInfoBubbleComponent } from './post-info-bubble/post-info-bubble.com
     AppRoutingModule,
     NgbModule,
     CarouselComponent,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
