@@ -1,4 +1,4 @@
-.container {
+/* .container {
     display: flex;
     border-radius: 5px;
     border-style: solid;
@@ -6,10 +6,27 @@
     padding: 10px;
     align-items: center;
     margin-top: 10px;
+} */
+
+.container {
+    display: flex;
+    width: 100%;  /* take up full width of parent */
+    border-radius: 5px;
+    border-style: solid;
+    padding: 10px;
+    margin-top: 10px;
 }
 
 img { 
     height: 50px;
     width: 50px;
     overflow: hidden;
+    margin-right: 15px;
+}
+
+.text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;  /* allow text-container to grow and take up remaining space */
 }
