@@ -1,4 +1,11 @@
-<div *ngFor="let city of cities" class="container">
+<a routerLink={{city.name}} *ngFor="let city of cities" >
+
+<div class="container">
     <img src={{city.image}}>
     <h3>{{city.name}}</h3>
 </div>
+
+
+</a>
+
+
