@@ -1,19 +1,9 @@
-/* .container {
-    position: relative;
-} */
-/* .posts {
-    position: absolute; 
-    bottom: 10px;
-	width: 100%;
-	background:  #cccccc;   
-} */
-
 .city-detail {
   flex: 2;
   padding: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* This will help spread the header and posts sections */
+  justify-content: space-between;
   height: calc(100vh - 170px);
 }
 
@@ -23,20 +13,12 @@
   align-items: center; /* Vertically centers the content in case they have different heights */
 }
 
-.weather {
-  margin-top: 20px;
-  /* Additional styles for the weather display */
-}
-
 .weather-display {
   display: flex;
+  justify-content: center; /* Distributes available space evenly between the icon and info */
   align-items: center;
   padding: 20px;
-  background: linear-gradient(
-    135deg,
-    rgba(245, 246, 252, 1),
-    rgba(209, 213, 219, 1)
-  );
+  background: linear-gradient(to bottom, #e0f2ff, #ffffff);
   border-radius: 20px;
   width: 300px; /* This sets a fixed width, but you can adjust or remove */
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.05);
@@ -48,31 +30,37 @@
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1), 0 8px 8px rgba(0, 0, 0, 0.05); /* Increases shadow depth */
 }
 
-.weather-icon {
-  width: 80px; /* Increased size */
-  height: 80px; /* Increased size */
-  margin-right: 20px;
-}
-
 .weather-info {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
+  color: #333;
 }
 
-.weather-info > * {
-  margin: 10px 0; /* Adds vertical spacing between elements inside weather-info */
+.temperature,
+.temperature-range,
+.weather-img,
+.condition {
+  order: -1;
+  display: inline-block;
 }
 
+.weather-img {
+  width: 40%;
+  height: 40%;
+  margin-right: 10px;
+}
 .temperature {
-  font-size: 2rem; /* Increased font size */
-  font-weight: 600; /* Bold for emphasis */
+  font-size: 3rem; /* Increased font size */
+  font-weight: 400; /* Bold for emphasis */
   margin-bottom: 10px;
+  color: #444;
 }
 
 .condition {
-  font-size: 1.2rem; /* Slightly larger font */
+  font-size: 2rem; /* Slightly larger font */
   margin-bottom: 10px;
+  color: #444;
 }
 
 .temperature-range {
@@ -89,8 +77,9 @@
 .additional-info {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 15px; /* Larger space between each item */
-  font-size: 1rem; /* Overall larger font size for better readability */
+  gap: 15px; 
+  font-size: 1rem;
+  color: #555;
 }
 
 .sunrise,
