@@ -33,16 +33,22 @@ export class CityInfoComponent implements OnInit {
   }
 
   private initMap(): void {
+
+    const baseLayer = new TileLayer({
+      source: new OSM()
+    });
+
+    const weatherLayer = new TileLayer({
+      source: new OSM({url:'https://tile.openweathermap.org/map/precipitation/{z}/{x}/{y}.png?appid=5bf9b7b0e8f7f4caf071365c73e2330c'})
+    });
+    
+    weatherLayer.setOpacity(0.6)
     this.map = new Map({
       target: 'radarMap',
-      layers: [
-        new TileLayer({
-          source: new OSM()
-        })
-      ],
+      layers: [baseLayer, weatherLayer],
       view: new View({
         center: [0, 0],
-        zoom: 2
+        zoom: 5
       })
     });
 
