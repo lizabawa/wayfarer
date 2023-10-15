@@ -4,6 +4,7 @@ import Map from 'ol/Map';
 import View from 'ol/View';
 import TileLayer from 'ol/layer/Tile';
 import OSM from 'ol/source/OSM';
+import { useGeographic } from 'ol/proj';
 
 @Component({
   selector: 'app-city-info',
@@ -25,15 +26,15 @@ export class CityInfoComponent implements OnInit {
     });
   }
   ngOnInit(): void {
-    this.getWeather('Miami');
+    this.getWeather('Madrid');
     setTimeout(() => {
-      this.initMap();
+      this.initMap(this.currentWeather);
 
       }, 500);
   }
 
-  private initMap(): void {
-
+  private initMap(currentWeather: any): void {
+    useGeographic()
     const baseLayer = new TileLayer({
       source: new OSM()
     });
@@ -47,8 +48,8 @@ export class CityInfoComponent implements OnInit {
       target: 'radarMap',
       layers: [baseLayer, weatherLayer],
       view: new View({
-        center: [0, 0],
-        zoom: 5
+        center: [currentWeather.coord.lon, currentWeather.coord.lat],
+        zoom: 7
       })
     });
 
