@@ -1,17 +1,19 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { WeatherService } from '../weather.service';
-import * as L from 'leaflet'
-
+import Map from 'ol/Map';
+import View from 'ol/View';
+import TileLayer from 'ol/layer/Tile';
+import OSM from 'ol/source/OSM';
 
 @Component({
   selector: 'app-city-info',
   templateUrl: './city-info.component.html',
   styleUrls: ['./city-info.component.css'],
 })
-export class CityInfoComponent implements OnInit, AfterViewInit {
+export class CityInfoComponent implements OnInit {
   cityInfo: any;
   currentWeather: any;
-  private map!: L.Map;
+  map!: Map;
 
   constructor(private weatherService: WeatherService) {}
 
@@ -24,31 +26,25 @@ export class CityInfoComponent implements OnInit, AfterViewInit {
   }
   ngOnInit(): void {
     this.getWeather('Miami');
-  }
+    setTimeout(() => {
+      this.initMap();
 
- 
+      }, 500);
+  }
 
   private initMap(): void {
-    console.log(document.getElementById('radarMap'))
-    if (document.getElementById('radarMap')) {
+    this.map = new Map({
+      target: 'radarMap',
+      layers: [
+        new TileLayer({
+          source: new OSM()
+        })
+      ],
+      view: new View({
+        center: [0, 0],
+        zoom: 2
+      })
+    });
 
-      this.map = L.map("radarMap").setView([51.505, -0.09], 10);
-      console.log(this.map)
-    L.tileLayer('https://tile.openweathermap.org/map/radar/{z}/{x}/{y}.png?appid=052f26926ae9784c2d677ca7bc5dec98', {
-      maxZoom: 19,
-      attribution: 'Weather data © OpenWeatherMap',
-    }).addTo(this.map);
-  } else {
-    // You can log here for debugging
-    console.error('RadarMap DOM element not found!');
   }
-}
-
-ngAfterViewInit(): void {
-  this.initMap();
-  this.getWeather("Orlando")
-//       console.log(this.map);
-console.log(document.getElementById("radarMap"));
-
-}
 }

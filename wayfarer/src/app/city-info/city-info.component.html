@@ -7,10 +7,10 @@
     </div>
     <div class="weather-display">
       <div class="weather-info">
-        <span class="temperature">{{ (currentWeather.main.temp - 273.15) * 9/5 + 32 | number: '1.0-0' }}°F</span>
+        <span class="temperature">{{ (currentWeather.main.temp) | number: '1.0-0' }}°F</span>
         <div class="temperature-range">
-          <span class="high">H: {{ (currentWeather.main.temp_max - 273.15) * 9/5 + 32 | number: '1.0-0' }}°F</span> | 
-          <span class="low">L: {{ (currentWeather.main.temp_min - 273.15) * 9/5 + 32 | number: '1.0-0' }}°F</span>
+          <span class="high">H: {{ (currentWeather.main.temp_max) | number: '1.0-0' }}°F</span> | 
+          <span class="low">L: {{ (currentWeather.main.temp_min) | number: '1.0-0' }}°F</span>
         </div>
         <img
         src="http://openweathermap.org/img/w/{{ currentWeather.weather[0].icon }}.png"
