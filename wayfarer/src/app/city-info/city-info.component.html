@@ -24,9 +24,10 @@
           <span class="wind">Wind: {{ currentWeather.wind.speed }} mph</span>
           <span class="humidity">Humidity: {{ currentWeather.main.humidity }}%</span>
         </div>
-        <div id="radarMap" style="height: 300px; width: 100%;"><input type="checkbox" [(ngModel)]="isChecked"></div>
-        
-      </div>{{isChecked}}
+        <div class="radar-section">
+        <div id="radarMap" style="height: 300px; width: 100%;"></div>
+        </div>
+      </div>
     </div>
   </div>
   <div class="posts">

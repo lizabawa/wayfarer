@@ -35,12 +35,12 @@
 /* Styles for weather display */
 .weather-display {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   padding: 20px;
   background: linear-gradient(to bottom, #e0f2ff, #ffffff);
   border-radius: 20px;
-  width: 50%;
+  width: 60%;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.05);
   transition: all 0.3s ease; /* Smoothens the hover effect */
 }
@@ -57,6 +57,11 @@
   flex-direction: column;
   align-items: center;
   color: #333;
+  width: 60%;
+}
+.radar-section {
+  width:80%; /* Adjust as needed */
+  /* Any other styling you want for this section */
 }
 
 .temperature,
