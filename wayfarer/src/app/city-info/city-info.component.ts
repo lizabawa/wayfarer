@@ -28,7 +28,7 @@ export class CityInfoComponent implements OnInit {
     });
   }
   ngOnInit(): void {
-    this.getWeather('New York');
+    this.getWeather('San Francisco');
     setTimeout(() => {
       this.initMap(this.currentWeather);
 

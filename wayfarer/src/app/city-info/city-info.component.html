@@ -1,4 +1,3 @@
- 
 <div class="city-detail" *ngIf="currentWeather">
   <div class="city-header">
     <div class="city-name">
@@ -6,27 +5,51 @@
       <h2>{{ currentWeather.sys.country }}</h2>
     </div>
     <div class="weather-display">
-      <div class="weather-info">
-        <span class="temperature">{{ (currentWeather.main.temp) | number: '1.0-0' }}°F</span>
+      <div class="left-side">
+        <span class="temperature"
+          >{{ currentWeather.main.temp | number : "1.0-0" }}°F</span
+        >
         <div class="temperature-range">
-          <span class="high">H: {{ (currentWeather.main.temp_max) | number: '1.0-0' }}°F</span> | 
-          <span class="low">L: {{ (currentWeather.main.temp_min) | number: '1.0-0' }}°F</span>
+          <span class="high"
+            >H: {{ currentWeather.main.temp_max | number : "1.0-0" }}°F</span
+          >
+          |
+          <span class="low"
+            >L: {{ currentWeather.main.temp_min | number : "1.0-0" }}°F</span
+          >
         </div>
+      </div>
+
+      <div class="right-side">
         <img
-        src="http://openweathermap.org/img/w/{{ currentWeather.weather[0].icon }}.png"
-        alt="Weather Icon"
-        class="weather-img"
+          src="http://openweathermap.org/img/w/{{
+            currentWeather.weather[0].icon
+          }}.png"
+          alt="Weather Icon"
+          class="weather-img"
         />
-        <span class="condition">{{ currentWeather.weather[0].description }}</span>
+        <span class="condition">{{
+          currentWeather.weather[0].description
+        }}</span>
         <div class="additional-info">
-          <span class="sunrise">Sunrise: {{ (currentWeather.sys.sunrise * 1000) | date: 'h:mm a' }}</span>
-          <span class="sunset">Sunset: {{ (currentWeather.sys.sunset * 1000) | date: 'h:mm a' }}</span>
           <span class="wind">Wind: {{ currentWeather.wind.speed }} mph</span>
-          <span class="humidity">Humidity: {{ currentWeather.main.humidity }}%</span>
+          <span class="humidity"
+            >Humidity: {{ currentWeather.main.humidity }}%</span
+          >
+          <span class="sunrise"
+            >Sunrise:
+            {{ currentWeather.sys.sunrise * 1000 | date : "h:mm a" }}</span
+          >
+          <span class="sunset"
+            >Sunset:
+            {{ currentWeather.sys.sunset * 1000 | date : "h:mm a" }}</span
+          >
+          
         </div>
-        <div class="radar-section">
-        <div id="radarMap" style="height: 300px; width: 100%;"></div>
-        </div>
+      </div>
+
+      <div class="radar-section">
+        <div id="radarMap" style="height: 300px; width: 100%"></div>
       </div>
     </div>
   </div>

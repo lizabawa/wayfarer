@@ -1,22 +1,22 @@
 /* Root styles for city details */
 .city-detail {
-    flex: 2;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: calc(100vh - 170px);
-  }
-  
+  flex: 2;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: calc(100vh - 170px);
+}
 
 /* Styles for city header section */
 .city-header {
-    display: flex; /* Used to position city name and weather horizontally */
-    justify-content: space-between;
-  }
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
 
 .city-name {
-  text-align: left; /* Left-align the city and country */
+  text-align: left;
   flex: 1;
 }
 
@@ -31,41 +31,53 @@
   font-weight: normal;
 }
 
-
-/* Styles for weather display */
+/* Styles for weather display container */
 .weather-display {
   display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
   justify-content: space-between;
-  align-items: center;
   padding: 20px;
   background: linear-gradient(to bottom, #e0f2ff, #ffffff);
   border-radius: 20px;
   width: 60%;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.05);
-  transition: all 0.3s ease; /* Smoothens the hover effect */
+  transition: all 0.3s ease;
 }
 
 .weather-display:hover {
-  transform: translateY(-3px); /* Slightly raises the card on hover */
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1), 0 8px 8px rgba(0, 0, 0, 0.05); /* Increases shadow depth */
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1), 0 8px 8px rgba(0, 0, 0, 0.05);
 }
 
+.left-side {
+  display: flex;
+  flex-direction: column;
+  align-items:flex-start;
+  justify-content: center;
+  width: 30%;
+  margin-left: 20px;
+}
 
-/* Styles for weather info within the weather display */
-.weather-info {
+.temperature-range {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+}
+
+.right-side {
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: #333;
   width: 60%;
 }
+
 .radar-section {
-  width:80%; /* Adjust as needed */
-  /* Any other styling you want for this section */
+  height: 300px;
+  width: 100%;
 }
 
-.temperature,
-.temperature-range,
+
 .weather-img,
 .condition {
   order: -1;
@@ -73,59 +85,59 @@
 }
 
 .weather-img {
-  width: 50%;
-  height: 50%;
-
+  width: auto;
+  height: auto;
+  align-self: center;
 }
+
 .temperature {
-  font-size: 3rem; /* Increased font size */
-  font-weight: 400; /* Bold for emphasis */
-  margin-bottom: 10px;
+  font-size: 4rem;
+  font-weight: 500;
   color: #444;
 }
 
 .condition {
-  font-size: 2rem; /* Slightly larger font */
+  font-size: 1.8rem;
   margin-bottom: 10px;
   color: #444;
+  align-self: center;
 }
 
 .temperature-range {
   display: flex;
   align-items: center;
   gap: 10px;
+  margin-top: 0;
 }
 
 .high,
 .low {
-  font-size: 1.5rem; /* Bigger than before */
+  font-size: 1.2rem;
 }
 
-
-/* Styles for additional weather info */
 .additional-info {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 15px;
+  gap: 20px;
   font-size: 1rem;
   color: #555;
+  margin-bottom: 10px;
 }
 
 .sunrise,
 .sunset,
 .wind,
 .humidity {
-  font-weight: 500; /* Semi-bold for clarity */
+  font-weight: 500;
 }
 
-
-/* Styles for post section at the bottom */
 .posts {
-  flex: 1; /* Allocates space for posts */
+  flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end; /* Pushes posts to the bottom */
+  justify-content: flex-end;
 }
+
 
 /* Add this media query to target screens with a maximum width of 480px (covers many mobile devices) */
 @media (max-width: 480px) {
