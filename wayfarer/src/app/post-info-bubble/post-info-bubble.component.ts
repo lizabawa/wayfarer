@@ -26,7 +26,7 @@ export class PostInfoBubbleComponent {
           this.http.get(`https://newsdata.io/api/1/news?apikey=pub_31144c11ee91a6edd0ba96fafd5ff6ed7b7b4&q=${evt.url.slice(6)}`)
           .subscribe(res => {
               (res as any).results.forEach((post: any) => {
-                if(this.posts.length < 3){
+                if(this.posts.length < 2){
                   this.posts.push(post);
                 }
                 

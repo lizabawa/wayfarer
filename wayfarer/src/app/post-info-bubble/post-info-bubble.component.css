@@ -1,16 +1,15 @@
 .container {
     display: flex;
     width: 100%;  /* take up full width of parent */
-    border-radius: 120px;
+    border-radius: 20px;
     border-style: solid;
     padding: 10px;
     margin-top: 10px;
-    height: 100px;
 }
 
 img { 
-    height: 70px;
-    width: 70px;
+    height: 50px;
+    width: 50px;
     overflow: hidden;
     margin-right: 15px;
 }
@@ -20,9 +19,21 @@ img {
     flex-direction: column;
     justify-content: space-between;
     flex: 1;  /* allow text-container to grow and take up remaining space */
+}.container {
+    display: flex;
+    border-radius: 15px;
+    border-style: solid;
+    justify-content: space-between;
+    padding: 10px;
+    align-items: center;
+    margin-top: 10px;
+    height: 100px;
 }
-p{
-    font-size: 10px;
+
+img { 
+    height: 70px;
+    width: 70px;
+    overflow: hidden;
 }
 p{
     font-size: 10px;
