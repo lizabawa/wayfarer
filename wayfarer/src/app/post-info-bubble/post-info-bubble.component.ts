@@ -29,7 +29,6 @@ export class PostInfoBubbleComponent {
                 if(this.posts.length < 2){
                   this.posts.push(post);
                 }
-                
 
         })
         
