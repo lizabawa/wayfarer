@@ -1,0 +1,19 @@
+.container {
+    margin-top: 2%;
+    /* height: 100vh; */
+}
+
+#city-list{
+    background-color: #B0E0E6;
+    margin-right: 3%;
+    /* height: 100vh; */
+    border-radius: 25px;
+    padding-top: 25px;
+}
+
+#city-info{
+    background-color: #E6E6FA;
+    /* height: 100vh; */
+    border-radius: 25px;
+}
+
