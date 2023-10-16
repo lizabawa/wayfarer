@@ -14,19 +14,19 @@ findRoute(): any { return document.querySelector("app-home")
   title = 'wayfarer';
   citySearch: string = '';
   searchSubject = new Subject();
-  currentRoute = this.route.url;
+  
 
 
   constructor(private appCitySearch: AppCitySearchService, private route: ActivatedRoute) { }
   findCity(city: string): void {
     this.searchSubject.next(city);
-    this.currentRoute = this.route.url;
+    
 
 }
 
 ngOnInit(): void {
-  // console.log(navigator.geolocation.getCurrentPosition)
-  this.currentRoute = this.route.url;
+  
+  
   this.searchSubject.pipe(
     debounceTime(1000),
     distinctUntilChanged()
@@ -35,7 +35,7 @@ ngOnInit(): void {
       
       this.appCitySearch.cityInfo.next(res);
       this.citySearch = '';
-      console.log(this.currentRoute = this.route.url)
+      
 })
 });
 

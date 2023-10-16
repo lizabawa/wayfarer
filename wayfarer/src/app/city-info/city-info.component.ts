@@ -11,6 +11,7 @@ import { useGeographic } from 'ol/proj';
 import LayerSwitcher from 'ol-layerswitcher';
 import Group from 'ol/layer/Group';
 import { distinctUntilChanged } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-city-info',
@@ -21,8 +22,9 @@ export class CityInfoComponent implements OnInit {
   cityName: string = "";
   currentWeather: any;
   map!: Map;
-  
-  constructor(private weatherService: WeatherService, private citySearchService: AppCitySearchService) {}
+  userLocation: any;
+
+  constructor(private weatherService: WeatherService, private citySearchService: AppCitySearchService, private http:HttpClient) {}
  
 
 
@@ -34,6 +36,28 @@ export class CityInfoComponent implements OnInit {
     });
   }
   ngOnInit(): void {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          if (position) {
+            console.log(position);
+            this.userLocation = {
+              coord:{
+                lon: position.coords.longitude,
+                lat: position.coords.latitude
+              }
+             
+              
+            };
+            setTimeout(() => {
+              this.http.get(`http://api.openweathermap.org/geo/1.0/reverse?lat=${this.userLocation.coord.lat}&lon=${this.userLocation.coord.lon}&appid=5bf9b7b0e8f7f4caf071365c73e2330c`).subscribe((data) => {
+                this.getWeather(( data as any)[0].name)
+                this.initMap(this.userLocation, true);});
+            }, 500)
+            
+            
+            
+              }});}
     this.citySearchService.cityInfo.pipe()
     .subscribe(res => {this.cityName= (res as any)[0].name
       this.getWeather(this.cityName)
