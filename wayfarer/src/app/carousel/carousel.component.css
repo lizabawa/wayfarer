@@ -1,3 +1,5 @@
 .picsum-img-wrapper img {
-    max-height: 600px;
+    height: 50vh;
+    width: auto;
+    max-height: none;
 }
