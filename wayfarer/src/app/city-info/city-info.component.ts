@@ -12,6 +12,7 @@ import LayerSwitcher from 'ol-layerswitcher';
 import Group from 'ol/layer/Group';
 import { distinctUntilChanged } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { ThisReceiver } from '@angular/compiler';
 
 @Component({
   selector: 'app-city-info',
@@ -28,10 +29,13 @@ export class CityInfoComponent implements OnInit {
  
 
 
-  getWeather(city: string): void {
+  getWeather(city: string, update: boolean): void {
     this.weatherService.getCurrentWeather(city).subscribe((data) => {
       this.currentWeather = data;
-
+      setTimeout(() => {
+        this.initMap(this.currentWeather, update);
+  
+      }, 500);
       
     });
   }
@@ -40,7 +44,7 @@ export class CityInfoComponent implements OnInit {
       navigator.geolocation.getCurrentPosition(
         (position) => {
           if (position) {
-            console.log(position);
+            
             this.userLocation = {
               coord:{
                 lon: position.coords.longitude,
@@ -51,27 +55,34 @@ export class CityInfoComponent implements OnInit {
             };
             setTimeout(() => {
               this.http.get(`http://api.openweathermap.org/geo/1.0/reverse?lat=${this.userLocation.coord.lat}&lon=${this.userLocation.coord.lon}&appid=5bf9b7b0e8f7f4caf071365c73e2330c`).subscribe((data) => {
-                this.getWeather(( data as any)[0].name)
-                this.initMap(this.userLocation, true);});
-            }, 500)
+                this.cityName = (( data as any)[0].name)
+                this.getWeather(this.cityName, false);
+                
+                });
+            }, 100)
             
             
+              }
+
+              
+            }
+              
+              )
+              
+              ;}
+             setTimeout(() => { if(!this.cityName) {
+                
+              this.getWeather('San Francisco', false);
             
-              }});}
+          }},200)
     this.citySearchService.cityInfo.pipe()
     .subscribe(res => {this.cityName= (res as any)[0].name
-      this.getWeather(this.cityName)
-      setTimeout(() => {
-        this.initMap(this.currentWeather, true);
-  
-      }, 500);
+      this.getWeather(this.cityName, true)
+      
       });
-    this.cityName? this.getWeather(this.cityName) : this.getWeather('Miami');
     
-    setTimeout(() => {
-      this.initMap(this.currentWeather, false);
-
-    }, 500);
+      
+   
   }
 
   private initMap(currentWeather: any, changeCoords:boolean): void {
