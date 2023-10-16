@@ -19,7 +19,7 @@ export class PostInfoBubbleComponent {
 
   ngOnInit() {
     this.router.events.subscribe((evt: any) => {
-      
+      this.posts = [];
       if (evt instanceof NavigationEnd) {
         if(evt.url.length> 6){
 

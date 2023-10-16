@@ -39,6 +39,13 @@ export class InfoBubbleComponent {
 
       }
       this.cities.push(this.newCity);
+      setTimeout(() => {
+        let button :any = document.querySelectorAll('.info');
+      ((button[(button.length-1)]) as HTMLLinkElement ).click();
+
+      },700)
+      
+      
       
     });
   }
