@@ -10,6 +10,7 @@ import OSM from 'ol/source/OSM';
 import { useGeographic } from 'ol/proj';
 import LayerSwitcher from 'ol-layerswitcher';
 import Group from 'ol/layer/Group';
+import { distinctUntilChanged } from 'rxjs';
 
 @Component({
   selector: 'app-city-info',
@@ -17,30 +18,44 @@ import Group from 'ol/layer/Group';
   styleUrls: ['./city-info.component.css'],
 })
 export class CityInfoComponent implements OnInit {
-  cityInfo: any;
+  cityName: string = "";
   currentWeather: any;
   map!: Map;
+  
+  constructor(private weatherService: WeatherService, private citySearchService: AppCitySearchService) {}
+ 
 
-  constructor(private weatherService: WeatherService) {}
 
   getWeather(city: string): void {
     this.weatherService.getCurrentWeather(city).subscribe((data) => {
       this.currentWeather = data;
 
-      // console.log(this.map)
+      
     });
   }
   ngOnInit(): void {
-    this.getWeather('San Francisco');
+    this.citySearchService.cityInfo.pipe(distinctUntilChanged())
+    .subscribe(res => {this.cityName= (res as any)[0].name
+      this.getWeather(this.cityName)
+      setTimeout(() => {
+        this.initMap(this.currentWeather, true);
+  
+      }, 500);
+      });
+    this.cityName? this.getWeather(this.cityName) : this.getWeather('Miami');
+    
     setTimeout(() => {
-      this.initMap(this.currentWeather);
+      this.initMap(this.currentWeather, false);
 
     }, 500);
   }
 
-  private initMap(currentWeather: any): void {
+  private initMap(currentWeather: any, changeCoords:boolean): void {
     useGeographic();
-    
+    if (changeCoords) {
+      this.map.getView().setCenter([currentWeather.coord.lon, currentWeather.coord.lat]);
+      return
+    }
     const baseLayer = new TileLayer({
       title: 'Base Layer',
       type: 'base',
@@ -94,6 +109,6 @@ export class CityInfoComponent implements OnInit {
       
     });
 
-    this.map.addControl(layerSwitcher);
+   
   }
 }
