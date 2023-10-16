@@ -34,7 +34,7 @@ export class CityInfoComponent implements OnInit {
     });
   }
   ngOnInit(): void {
-    this.citySearchService.cityInfo.pipe(distinctUntilChanged())
+    this.citySearchService.cityInfo.pipe()
     .subscribe(res => {this.cityName= (res as any)[0].name
       this.getWeather(this.cityName)
       setTimeout(() => {

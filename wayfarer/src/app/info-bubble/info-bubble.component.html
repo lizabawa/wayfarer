@@ -1,6 +1,6 @@
-<a routerLink={{city.name}} *ngFor="let city of cities" >
+<a (click)="findCitySearch(city.name)" routerLink={{city.name}} *ngFor="let city of cities" >
 
-<div class="container">
+<div  class="container">
     <img src={{city.image}}>
     <h3>{{city.name}}</h3>
 </div>

@@ -21,6 +21,9 @@ export class InfoBubbleComponent {
 
     this.appCitySearch.cityInfo.pipe(distinctUntilChanged())
     .subscribe(res => {
+      if(this.cities.filter((c: { name: any; }) => c.name === (res as any)[0].name).length > 0){
+        return
+      }
       
       this.img = `https://source.unsplash.com/random?${(res as any)[0].name}`
       
@@ -41,7 +44,11 @@ export class InfoBubbleComponent {
   }
   
   
-  
+  findCitySearch(cityName: string): void {
+    this.appCitySearch.findCityDetails(cityName).subscribe(res => {
+    
+      this.appCitySearch.cityInfo.next(res);
+  })}
   
   
   
