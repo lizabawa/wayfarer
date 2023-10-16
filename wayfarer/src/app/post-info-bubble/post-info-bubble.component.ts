@@ -27,6 +27,9 @@ export class PostInfoBubbleComponent {
           .subscribe(res => {
               (res as any).results.forEach((post: any) => {
                 if(this.posts.length < 2){
+                  if(post.image_url == null){
+                    post.image_url = `https://source.unsplash.com/random?${evt.url.slice(6)}`
+                  }
                   this.posts.push(post);
                 }
 
