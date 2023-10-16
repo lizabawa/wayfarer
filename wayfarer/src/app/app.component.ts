@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http'; 
 import { Subject, debounceTime, distinctUntilChanged } from 'rxjs';
 import { AppCitySearchService } from './app-city-search.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -10,20 +9,23 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
+findRoute(): any { return document.querySelector("app-home")
+}
   title = 'wayfarer';
   citySearch: string = '';
   searchSubject = new Subject();
-  
+  currentRoute = this.route.url;
 
 
-  constructor(private appCitySearch: AppCitySearchService, private router: Router) { }
+  constructor(private appCitySearch: AppCitySearchService, private route: ActivatedRoute) { }
   findCity(city: string): void {
     this.searchSubject.next(city);
-    
+    this.currentRoute = this.route.url;
 
 }
 
 ngOnInit(): void {
+  this.currentRoute = this.route.url;
   this.searchSubject.pipe(
     debounceTime(1000),
     distinctUntilChanged()
@@ -32,7 +34,7 @@ ngOnInit(): void {
       
       this.appCitySearch.cityInfo.next(res);
       this.citySearch = '';
-      
+      console.log(this.currentRoute = this.route.url)
 })
 });
 
