@@ -12,7 +12,16 @@ import { FormsModule } from '@angular/forms';
 })
 
 export class CarouselComponent {
-	images = [62, 83, 466, 965, 982, 1043, 738].map((n) => `https://picsum.photos/id/${n}/900/500`);
+	images = [
+		"assets/carousel-images/img1.jpg",
+		"assets/carousel-images/img2.jpg",
+		"assets/carousel-images/img3.jpg",
+		"assets/carousel-images/img4.jpg",
+		"assets/carousel-images/img5.jpg",
+		"assets/carousel-images/img6.jpg",
+		"assets/carousel-images/img7.jpg"
+	]
+	
 
 	paused = false;
 	unpauseOnArrow = false;

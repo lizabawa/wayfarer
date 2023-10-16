@@ -4,12 +4,16 @@
 }
 
 #city-list{
-    background-color: grey;
+    /* background: linear-gradient(to bottom, #E0F2FF, #FFFFFF); */
+    background-color: #B0E0E6;
     margin-right: 3%;
     height: 100vh;
+    border-radius: 25px;
+    padding-top: 25px;
 }
 
 #city-info{
-    background-color: grey;
+    background-color: #E6E6FA;
     height: 100vh;
+    border-radius: 25px;
 }

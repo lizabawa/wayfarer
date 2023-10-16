@@ -25,6 +25,7 @@ findRoute(): any { return document.querySelector("app-home")
 }
 
 ngOnInit(): void {
+  // console.log(navigator.geolocation.getCurrentPosition)
   this.currentRoute = this.route.url;
   this.searchSubject.pipe(
     debounceTime(1000),
