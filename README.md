@@ -22,10 +22,9 @@ Wayfarer Travel is a travel community platform that empowers users to share city
 
  
 ### Entity-Relationship Diagram (ERD)
-To model our data structure effectively, we've created an Entity-Relationship Diagram (ERD). This visual representation maps out the relationships between different entities in our system, such as users, albums, and photos. The ERD serves as a blueprint for our database design, ensuring that data is organized and structured efficiently.
 
-![ERD Diagram Image]()
-
+![ERD Diagram Image](wayfarer\src\assets\images\erd1.png)
+![ERD Diagram Image](wayfarer\src\assets\images\erd2.png)
 
 ## Tools and Technologies Used
 
