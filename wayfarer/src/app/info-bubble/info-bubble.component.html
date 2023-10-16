@@ -1,6 +1,11 @@
 <a routerLink={{city.name}} *ngFor="let city of cities" >
 
 <div class="container">
+    <img src="{{cityImage}}">
+    <div class="text-container">
+    <h3>{{cityName}}</h3>
+    <p>From the Golden Gate Bridge to Alcatraz, there's no shortage of sights to see.</p>
+</div>
     <img src={{city.image}}>
     <h3>{{city.name}}</h3>
 </div>

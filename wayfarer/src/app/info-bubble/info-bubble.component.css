@@ -1,10 +1,9 @@
 .container {
     display: flex;
-    border-radius: 5px;
+    width: 100%;  /* take up full width of parent */
+    border-radius: 20px;
     border-style: solid;
-    justify-content: space-between;
     padding: 10px;
-    align-items: center;
     margin-top: 10px;
     box-shadow: 0px 2px 5px 0px rgba(0, 0, 0);
 }
@@ -18,4 +17,12 @@ img {
     height: 50px;
     width: 50px;
     overflow: hidden;
+    margin-right: 15px;
+}
+
+.text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;  /* allow text-container to grow and take up remaining space */
 }
