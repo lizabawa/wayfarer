@@ -1,0 +1,14 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Prevent scrolling */
+}
+
+input {
+    border-color: black;
+}
+
+.navbar {
+    padding: 0% 3%;
+}

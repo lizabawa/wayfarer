@@ -9,8 +9,9 @@ const routes: Routes = [
     component: LandingComponent
   },
   {
-    path: "cities",
-    component: HomeComponent
+    path: "home",
+    component: HomeComponent,
+    children: [{path: ":cityName", component: HomeComponent}]
   }
 ]
 

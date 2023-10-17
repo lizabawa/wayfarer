@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ViewChild, OnInit } from '@angular/core';
+import { AppCitySearchService } from '../app-city-search.service';
+import { AppComponent } from '../app.component';
+
 import { WeatherService } from '../weather.service';
 import Map from 'ol/Map';
 import View from 'ol/View';
@@ -7,6 +10,9 @@ import OSM from 'ol/source/OSM';
 import { useGeographic } from 'ol/proj';
 import LayerSwitcher from 'ol-layerswitcher';
 import Group from 'ol/layer/Group';
+import { distinctUntilChanged } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { ThisReceiver } from '@angular/compiler';
 
 @Component({
   selector: 'app-city-info',
@@ -14,30 +20,86 @@ import Group from 'ol/layer/Group';
   styleUrls: ['./city-info.component.css'],
 })
 export class CityInfoComponent implements OnInit {
-  cityInfo: any;
+  cityName: string = "";
   currentWeather: any;
   map!: Map;
+  userLocation: any;
 
-  constructor(private weatherService: WeatherService) {}
+  constructor(private weatherService: WeatherService, private citySearchService: AppCitySearchService, private http:HttpClient) {}
+ 
 
-  getWeather(city: string): void {
+
+  getWeather(city: string, update: boolean): void {
     this.weatherService.getCurrentWeather(city).subscribe((data) => {
       this.currentWeather = data;
-
-      // console.log(this.map)
+      // 
+      setTimeout(() => {
+        if(!this.map){
+        this.initMap(this.currentWeather, update);
+        } else{
+          this.initMap(this.currentWeather, true);
+        }
+      }, 500);
+      
     });
   }
   ngOnInit(): void {
-    this.getWeather('San Francisco');
-    setTimeout(() => {
-      this.initMap(this.currentWeather);
-
-    }, 500);
-  }
-
-  private initMap(currentWeather: any): void {
-    useGeographic();
+              this.showUserLocation();
+             setTimeout(() => { if(!this.map) {
+                
+              this.getWeather('San Francisco', false);
+            
+          }},800)
+    this.citySearchService.cityInfo.pipe()
+    .subscribe(res => {this.cityName= (res as any)[0].name
+      this.getWeather(this.cityName, true)
+      
+      });
     
+      
+   
+  }
+  private showUserLocation(): void {
+    
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          if (position) {
+            
+            this.userLocation = {
+              coord:{
+                lon: position.coords.longitude,
+                lat: position.coords.latitude
+              }
+             
+              
+            };
+            setTimeout(() => {
+              this.http.get(`http://api.openweathermap.org/geo/1.0/reverse?lat=${this.userLocation.coord.lat}&lon=${this.userLocation.coord.lon}&appid=5bf9b7b0e8f7f4caf071365c73e2330c`).subscribe((data) => {
+                this.cityName = (( data as any)[0].name)
+                this.getWeather(this.cityName, false);
+                
+                });
+            }, 100)
+            
+            
+              }
+
+              
+            }
+              
+              )
+              
+              ;}
+
+
+  }
+  private initMap(currentWeather: any, changeCoords:boolean): void {
+    useGeographic();
+    if (changeCoords) {
+      this.map.getView().setCenter([currentWeather.coord.lon, currentWeather.coord.lat]);
+      return
+    }
     const baseLayer = new TileLayer({
       title: 'Base Layer',
       type: 'base',
@@ -91,6 +153,6 @@ export class CityInfoComponent implements OnInit {
       
     });
 
-    this.map.addControl(layerSwitcher);
+   
   }
 }
