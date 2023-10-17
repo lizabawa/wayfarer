@@ -52,14 +52,21 @@ Wayfarer Travel is a travel community platform that empowers users to share city
 
 </details>
 <details>
-  <summary>Title</summary>
-  <strong>User Story</strong>: text. <br>
-  <strong>User Story</strong>:text. <br> 
+  <summary>Data Requirements</summary>
+  <strong>User Story</strong>: A user should be able to
+
+1. View city pages for "London" and "Gibraltar".
+2. A post's title must be between 1 and 200 characters.
+3. A post's content must not be empty. 
+<br>
+
 </details>
 <details>
-  <summary>Title</summary>
-  <strong>User Story</strong>: text. <br>
-  <strong>User Story</strong>:text. <br> 
+
+  <summary>Weather API</summary>
+  <strong>User Story</strong>: Call [Open Weather API](https://openweathermap.org/current) for each city to display the current weather on each city's page.
+
+ <br>
 </details>
  
 ### Entity-Relationship Diagram (ERD)
