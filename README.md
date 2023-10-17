@@ -1,7 +1,7 @@
 # Wayfarer - Travel
 
 ## Project Description
-Wayfarer Travel is a travel community platform that empowers users to share city-specific tips, posts, and logs about their favorite locations around the globe. Whether you're a local, expat, or a traveler, Wayfarer Travel CityExplorer brings you invaluable insights straight from people who know the city best.
+Wayfarer Travel is a travel community platform that empowers users to share city-specific tips, posts, and logs about their favorite locations around the globe. Whether you're a local or a traveler, Wayfarer Travel brings you invaluable insights straight from people who know the city best.
 
 
 ## Table of Contents
@@ -19,7 +19,48 @@ Wayfarer Travel is a travel community platform that empowers users to share city
 
 ### User-Centric Design
 
+<details>
+  <summary>Landing Page</summary>
+  <strong>User Story</strong>: Navigate to "/" and see a basic splash page with the name of the website. <br>
+  <strong>User Story</strong>: See the site-wide header on every page with a link to home page with list of cities.<br> 
+</details>
+<details>
+  <summary>Home Page</summary>
+  <strong>User Story</strong>: 
+  View the "San Francisco" page (at "/cities/1") including:
 
+  * The site-wide header.
+  * The name of the city.
+  * An iconic photo of the city. 
+
+  <br>
+  <strong>User Story</strong>: View a list of posts on the San Francisco page:
+
+  * Sorted by newest first.
+  * With the post titles linked to the individual post "show" pages.
+
+  <br> 
+  <strong>User Story</strong>: Use the search bar to search through the posts' title and/or content. 
+
+  <br>
+
+  <strong>User Story</strong>: Click on the title of one of their posts and be redirected to a "show" page for that post.
+  <br>
+
+  <strong>User Story</strong>: View post "show" pages with title, author, and content. 
+  <br>
+
+</details>
+<details>
+  <summary>Title</summary>
+  <strong>User Story</strong>: text. <br>
+  <strong>User Story</strong>:text. <br> 
+</details>
+<details>
+  <summary>Title</summary>
+  <strong>User Story</strong>: text. <br>
+  <strong>User Story</strong>:text. <br> 
+</details>
  
 ### Entity-Relationship Diagram (ERD)
 

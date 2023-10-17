@@ -9,7 +9,7 @@ const routes: Routes = [
     component: LandingComponent
   },
   {
-    path: "home",
+    path: "cities",
     component: HomeComponent
   }
 ]
