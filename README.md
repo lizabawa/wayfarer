@@ -5,15 +5,11 @@ Wayfarer Travel is a travel community platform that empowers users to share city
 
 
 ## Table of Contents
-- [Features](#features)
 - [Project Approach](#project-approach)
 - [Entity-Relationship Diagram (ERD)](#entity-relationship-diagram-erd)
 - [Tools and Technologies Used](#tools-and-technologies-used)
 - [Hurdles Encountered During Development](#hurdles-encountered-during-development)
 - [Resources & Acknowledgements](#resources--acknowledgements)
-## Features
-
-* User can search for information pertaining to a searched city.
 
 ## Project Approach 
 
@@ -23,7 +19,10 @@ We employed a combination of tools and practices to streamline our development p
 
 <details>
   <summary>Landing Page</summary>
-  <strong>User Story</strong>: Navigate to "/" and see a basic splash page with the name of the website. <br>
+  <strong>User Story</strong>: Navigate to "/" and see a basic splash page with the name of the website.
+  
+  <br>
+
   <strong>User Story</strong>: See the site-wide header on every page with a link to home page with list of cities.<br> 
 </details>
 <details>
@@ -78,7 +77,14 @@ We employed a combination of tools and practices to streamline our development p
 
 ## Tools and Technologies Used
 
-- **Documentation:** Well-documented codebase.
+The following is a list of the tools and technologies that were employed in the development of this project:
+ - **VS Code:** The code editor of choice, offering robust features for debugging and source code editing.
+ - **HTML:** Utilized for creating the basic structure of the web application.
+ - **CSS:** Employed for styling the HTML elements and improving the overall user interface.
+ - **Angular:** A framework for building dynamic web applications, used to create a scalable and maintainable codebase.
+ - **Bootstrap:** A CSS framework for rapidly developing responsive and mobile-first web layouts.
+These tools and technologies were integral in delivering a high-quality, user-friendly application.
+
 - **GitHub:** Version control and collaboration platform.
 
 
@@ -92,15 +98,19 @@ We employed a combination of tools and practices to streamline our development p
 
 
 ## Resources & Acknowledgements
-
-
-
 ### General Assembly Instructors
 - Suresh Sigera: [GitHub](https://github.com/sureshmelvinsigera)
 - Dhrubo Chowdhury: [GitHub](https://github.com/Dhrubo-Chowdhury)
 - Leonardo Rodriguez: [GitHub](https://github.com/LRodriguez92)
 
 ### Links
+
+* [OpenLayers](https://openlayers.org/)
+* [OpenWeatherMap API](https://openweathermap.org/api)
+* [OpenLayers LayerSwitcher Plugin](https://github.com/walkermatt/ol-layerswitcher)
+* [NewsData - News API](https://newsdata.io/)
+* [Unsplash - Free Images & Pictures](https://unsplash.com/)
+* [Canva](https://www.canva.com/)
 
 ## Contributors
 - Gabrielle Handy: [GitHub](https://github.com/GabrielleHandy) | [LinkedIn](https://www.linkedin.com/in/gabriellehandyswe/)
