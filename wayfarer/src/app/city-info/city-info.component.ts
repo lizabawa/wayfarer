@@ -11,6 +11,8 @@ import { useGeographic } from 'ol/proj';
 import LayerSwitcher from 'ol-layerswitcher';
 import Group from 'ol/layer/Group';
 import { distinctUntilChanged } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { ThisReceiver } from '@angular/compiler';
 
 @Component({
   selector: 'app-city-info',
@@ -21,35 +23,76 @@ export class CityInfoComponent implements OnInit {
   cityName: string = "";
   currentWeather: any;
   map!: Map;
-  
-  constructor(private weatherService: WeatherService, private citySearchService: AppCitySearchService) {}
+  userLocation: any;
+
+  constructor(private weatherService: WeatherService, private citySearchService: AppCitySearchService, private http:HttpClient) {}
  
 
 
-  getWeather(city: string): void {
+  getWeather(city: string, update: boolean): void {
     this.weatherService.getCurrentWeather(city).subscribe((data) => {
       this.currentWeather = data;
-
+      setTimeout(() => {
+        if(!this.map){
+        this.initMap(this.currentWeather, update);
+        } else{
+          this.initMap(this.currentWeather, true);
+        }
+      }, 500);
       
     });
   }
   ngOnInit(): void {
+              this.showUserLocation();
+             setTimeout(() => { if(!this.map) {
+                
+              this.getWeather('San Francisco', false);
+            
+          }},800)
     this.citySearchService.cityInfo.pipe()
     .subscribe(res => {this.cityName= (res as any)[0].name
-      this.getWeather(this.cityName)
-      setTimeout(() => {
-        this.initMap(this.currentWeather, true);
-  
-      }, 500);
+      this.getWeather(this.cityName, true)
+      
       });
-    this.cityName? this.getWeather(this.cityName) : this.getWeather('Miami');
     
-    setTimeout(() => {
-      this.initMap(this.currentWeather, false);
-
-    }, 500);
+      
+   
   }
+  private showUserLocation(): void {
+    
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          if (position) {
+            
+            this.userLocation = {
+              coord:{
+                lon: position.coords.longitude,
+                lat: position.coords.latitude
+              }
+             
+              
+            };
+            setTimeout(() => {
+              this.http.get(`http://api.openweathermap.org/geo/1.0/reverse?lat=${this.userLocation.coord.lat}&lon=${this.userLocation.coord.lon}&appid=5bf9b7b0e8f7f4caf071365c73e2330c`).subscribe((data) => {
+                this.cityName = (( data as any)[0].name)
+                this.getWeather(this.cityName, false);
+                
+                });
+            }, 100)
+            
+            
+              }
 
+              
+            }
+              
+              )
+              
+              ;}
+
+
+  }
   private initMap(currentWeather: any, changeCoords:boolean): void {
     useGeographic();
     if (changeCoords) {
