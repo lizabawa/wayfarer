@@ -13,7 +13,7 @@ export class AppCitySearchService {
   
   findCityDetails(city: string){
     
-    return this.http.get(`http://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=052f26926ae9784c2d677ca7bc5dec98&`)
+    return this.http.get(`https://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=052f26926ae9784c2d677ca7bc5dec98&`)
 
   }
 
