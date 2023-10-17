@@ -74,7 +74,7 @@ export class CityInfoComponent implements OnInit {
                 
               this.getWeather('San Francisco', false);
             
-          }},200)
+          }},300)
     this.citySearchService.cityInfo.pipe()
     .subscribe(res => {this.cityName= (res as any)[0].name
       this.getWeather(this.cityName, true)
