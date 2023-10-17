@@ -1,13 +1,16 @@
 <div class="container" *ngIf="currentWeather">
   <!--ROW 1-->
-  <div class="row">
+  <div class="row justify-content-between">
     <!--COL 1 NAME AND COUNTRY-->
     <div class="col-md-4" id="city-header">
       <h1 >{{ currentWeather.name }}</h1>
       <h2>{{ currentWeather.sys.country }}</h2>
     </div>
+
+   
+    
     <!--COL 2 WEATHER APP-->
-    <div class="col">
+    <div class="col-md-7">
       <div class="weather-display">
         <div class="left-side">
           <span class="temperature"
@@ -53,7 +56,7 @@
         </div>
   
         <div class="radar-section">
-          <div id="radarMap" style="height: 60%; width: 100%"></div>
+          <div id="radarMap" style="height: 80%; width: 100%"></div>
         </div>
       </div>
     </div>

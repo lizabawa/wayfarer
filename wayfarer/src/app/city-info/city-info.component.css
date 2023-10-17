@@ -9,11 +9,13 @@
 /* Styles for city header section */
 #city-header {
   margin-bottom: 20px;
+  max-width: max-content;
 }
 
 #city-header h1 {
   margin: 0;
   font-weight: bold;
+  font-size: 3.5rem;
 }
 
 #city-header h2 {
@@ -31,12 +33,9 @@
   padding: 20px;
   background: linear-gradient(to bottom, #e0f2ff, #ffffff);
   border-radius: 20px;
-  width: 60%;
   height: 90%;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.05);
   transition: all 0.3s ease;
-  
-
   width: fit-content;
 }
 
@@ -50,7 +49,7 @@
   flex-direction: column;
   align-items:flex-start;
   justify-content: center;
-  width: 30%;
+  width: 34%;
   margin-left: 20px;
 }
 
@@ -64,7 +63,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 60%;
+  width: 61%;
 }
 
 .radar-section {
@@ -114,7 +113,7 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
-  font-size: 1rem;
+  font-size: 0.9rem;
   color: #555;
   margin-bottom: 10px;
 }
@@ -132,6 +131,8 @@
   flex-direction: column;
   justify-content: flex-end;
 }
+
+
 
 
 /* Add this media query to target screens with a maximum width of 480px (covers many mobile devices) */

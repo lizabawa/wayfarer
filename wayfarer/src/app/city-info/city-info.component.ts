@@ -32,6 +32,7 @@ export class CityInfoComponent implements OnInit {
   getWeather(city: string, update: boolean): void {
     this.weatherService.getCurrentWeather(city).subscribe((data) => {
       this.currentWeather = data;
+      // 
       setTimeout(() => {
         if(!this.map){
         this.initMap(this.currentWeather, update);
