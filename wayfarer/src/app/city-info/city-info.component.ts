@@ -33,13 +33,33 @@ export class CityInfoComponent implements OnInit {
     this.weatherService.getCurrentWeather(city).subscribe((data) => {
       this.currentWeather = data;
       setTimeout(() => {
+        if(!this.map){
         this.initMap(this.currentWeather, update);
-  
+        } else{
+          this.initMap(this.currentWeather, true);
+        }
       }, 500);
       
     });
   }
   ngOnInit(): void {
+              this.showUserLocation();
+             setTimeout(() => { if(!this.map) {
+                
+              this.getWeather('San Francisco', false);
+            
+          }},800)
+    this.citySearchService.cityInfo.pipe()
+    .subscribe(res => {this.cityName= (res as any)[0].name
+      this.getWeather(this.cityName, true)
+      
+      });
+    
+      
+   
+  }
+  private showUserLocation(): void {
+    
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
         (position) => {
@@ -70,21 +90,9 @@ export class CityInfoComponent implements OnInit {
               )
               
               ;}
-             setTimeout(() => { if(!this.cityName) {
-                
-              this.getWeather('San Francisco', false);
-            
-          }},300)
-    this.citySearchService.cityInfo.pipe()
-    .subscribe(res => {this.cityName= (res as any)[0].name
-      this.getWeather(this.cityName, true)
-      
-      });
-    
-      
-   
-  }
 
+
+  }
   private initMap(currentWeather: any, changeCoords:boolean): void {
     useGeographic();
     if (changeCoords) {
