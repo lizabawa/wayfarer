@@ -72,8 +72,8 @@ We employed a combination of tools and practices to streamline our development p
  
 ### Entity-Relationship Diagram (ERD)
 
-![ERD Diagram Image](wayfarer\src\assets\images\erd1.png)
-![ERD Diagram Image](wayfarer\src\assets\images\erd2.png)
+![ERD Diagram Image](assets\images\erd1.png)
+![ERD Diagram Image](assets\images\erd2.png)
 
 ## Tools and Technologies Used
 
