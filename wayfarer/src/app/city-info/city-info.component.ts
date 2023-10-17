@@ -75,7 +75,7 @@ export class CityInfoComponent implements OnInit {
               
             };
             setTimeout(() => {
-              this.http.get(`http://api.openweathermap.org/geo/1.0/reverse?lat=${this.userLocation.coord.lat}&lon=${this.userLocation.coord.lon}&appid=5bf9b7b0e8f7f4caf071365c73e2330c`).subscribe((data) => {
+              this.http.get(`https://api.openweathermap.org/geo/1.0/reverse?lat=${this.userLocation.coord.lat}&lon=${this.userLocation.coord.lon}&appid=5bf9b7b0e8f7f4caf071365c73e2330c`).subscribe((data) => {
                 this.cityName = (( data as any)[0].name)
                 this.getWeather(this.cityName, false);
                 
