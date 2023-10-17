@@ -13,9 +13,11 @@ Wayfarer Travel is a travel community platform that empowers users to share city
 - [Resources & Acknowledgements](#resources--acknowledgements)
 ## Features
 
-
+* User can search for information pertaining to a searched city.
 
 ## Project Approach 
+
+We employed a combination of tools and practices to streamline our development process. Driver navigator, a critical component, allowed us to efficiently manage code collaborations. It enabled us to switch roles between driver and navigator during pair programming sessions, enhancing code quality through real-time code review and constructive feedback. In tandem with Git branches, our version control system, we maintained a clean and organized codebase. Branches allowed us to work on features and bug fixes separately, mitigating conflicts and ensuring code stability. Additionally, we used huddles to foster communication and collaboration within the team. These brief, focused meetings served as a platform to discuss progress, share insights, and address any challenges promptly. The combination of these tools and practices enabled us to work cohesively, maintain code integrity, and stay on track with our project milestones.
 
 ### User-Centric Design
 
@@ -82,13 +84,17 @@ Wayfarer Travel is a travel community platform that empowers users to share city
 
 ## Hurdles Encountered During Development
 
+* During our project development, we faced a few key hurdles. One significant challenge was CSS styling, which required meticulous attention to detail to ensure a polished and cohesive user interface. Implementing maps posed another obstacle as we integrated location-based features, coordinating various components effectively. Creating a dynamic and responsive webpage, capable of adapting to different screen sizes and user interactions, demanded ongoing testing and refinement.
 
+* Integrating Leaflet with OpenWeatherAPI presented several challenges that impeded the smooth implementation of weather radar functionality in our application. In our experience, the attempt to combine Leaflet with OpenWeatherAPI resulted in a complete failure to display any weather radar data at all. Despite our best efforts to debug and troubleshoot, we couldn't resolve the issues within the Leaflet framework. This was a significant hurdle, and given the time-sensitive nature of our project, we couldn't afford to remain stuck on this problem. As a result, we chose to switch to OpenLayers, which not only provided greater flexibility but also allowed us to successfully implement and display the real-time weather radar layers we needed for our application.
 
-## Installation Instructions
-
+**Despite these challenges, our team's collaborative efforts and innovative problem-solving led to the successful realization of our project goals.**
 
 
 ## Resources & Acknowledgements
+
+
+
 ### General Assembly Instructors
 - Suresh Sigera: [GitHub](https://github.com/sureshmelvinsigera)
 - Dhrubo Chowdhury: [GitHub](https://github.com/Dhrubo-Chowdhury)
@@ -99,7 +105,7 @@ Wayfarer Travel is a travel community platform that empowers users to share city
 ## Contributors
 - Gabrielle Handy: [GitHub](https://github.com/GabrielleHandy) | [LinkedIn](https://www.linkedin.com/in/gabriellehandyswe/)
  - Elizabeth Yang: [GitHub](https://github.com/lizabawa) | [LinkedIn](https://www.linkedin.com/in/elizabeth-a-yang/)
- - River Dejesus: [GitHub](https://github.com/TheProgrammingRiver) | [LinkedIn]()
+ - River Dejesus: [GitHub](https://github.com/TheProgrammingRiver) | [LinkedIn](https://www.linkedin.com/in/river-dejesus/)
   - JP Bacquet: [Github](https://github.com/jeanpolbac) | [LinkedIn](https://www.linkedin.com/in/jpbacquet/)
 
 
