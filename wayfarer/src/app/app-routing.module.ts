@@ -10,7 +10,8 @@ const routes: Routes = [
   },
   {
     path: "cities",
-    component: HomeComponent
+    component: HomeComponent,
+    children: [{path: ":cityName", component: HomeComponent}]
   }
 ]
 

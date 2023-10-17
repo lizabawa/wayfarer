@@ -1,13 +1,22 @@
 .container {
     margin-top: 2%;
-
+    max-height: 100%;
 }
 
 #city-list{
-    background-color: grey;
+    background-color: #B0E0E6;
     margin-right: 3%;
+    max-height: 100%;
+    border-radius: 25px;
+    padding: 20px;
+    margin-top: 20px;
 }
 
-#city-info{
-    background-color: grey;
+@media (max-width: 480px){
+    #city-list {
+        height: auto;
+        margin: 10px;
+        width: 95%;
+        
+      }
 }

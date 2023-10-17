@@ -1,19 +1,9 @@
-<div class="container">
-  <img src="{{ cityImage }}" />
-  <!-- <div class="text-container">
-    <h3>{{ postTitle }}</h3>
-    <p>{{ postSummary }}</p>
-  </div> -->
+<div *ngFor="let post of posts" class="container">
+  <img src="{{ post.image_url }}" />
   <div class="text-container">
-    <h3>Exploring London</h3>
-    <p>Discover the vibrant streets and historical landmarks of this iconic city.</p>
-  </div>
-</div>
-
-<div class="container">
-  <img src="{{ cityImage }}" alt="City Image" />
-  <div class="text-container">
-    <h3>San Francisco Vibes</h3>
-    <p>From the Golden Gate Bridge to Alcatraz, there's no shortage of sights to see.</p>
+    <a href={{post.link}} target="_blank">
+    <h6>{{ post.title }}</h6>
+    </a>
+    <p>{{ post.description }}</p>
   </div>
 </div>
