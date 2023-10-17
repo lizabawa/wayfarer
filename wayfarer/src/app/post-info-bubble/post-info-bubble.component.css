@@ -2,9 +2,13 @@
     display: flex;
     width: 100%;  /* take up full width of parent */
     border-radius: 20px;
-    border-style: solid;
-    padding: 10px;
+    padding: 2%;
     margin-top: 10px;
+    border: none;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.05);
+    background: linear-gradient(to bottom, #e2d6ef, #FFFFFF);
+    align-items: center;
+
 }
 
 img { 
@@ -17,19 +21,21 @@ img {
 .text-container {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
+    justify-items: center;
+    padding-top: 2%;
     flex: 1;  /* allow text-container to grow and take up remaining space */
-}.container {
-    display: flex;
-    border-radius: 15px;
-    border-style: solid;
-    justify-content: space-between;
-    padding: 10px;
-    align-items: center;
-    margin-top: 10px;
-    height: 100px;
 }
 
-p{
-    font-size: 10px;
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a :hover {
+    text-decoration: none;
+    color: black;
+}
+p {
+    font-size: 12px;
 }
